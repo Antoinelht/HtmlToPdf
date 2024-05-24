@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Make Props</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+    function generatePDF() {
+    const page = 'MAKE PROPS MAKE IT WORKS ';
+    var opt = {
+        margin:       1,
+        filename:     'MakeProps.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    // Choose the element that our invoice is rendered in.
+    
+    html2pdf().set(opt).from(page).save();
+    }
+   </script>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-5 text-center">PDF Generator</h1>
+        <div class="text-center">
+            <button onclick="generatePDF()" class="btn btn-primary btn-lg">Print PDF</button>
+        </div>
+    </div>
+</body>
+</html>
